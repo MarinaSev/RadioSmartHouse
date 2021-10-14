@@ -3,7 +3,7 @@
 
 name: Java CI with Maven
 
-on: [ push, pull_requests]
+on: [ push, pull_request ]
 
 jobs:
   build:
@@ -19,4 +19,4 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package -e verify
+      run: mvn -B -e verify
