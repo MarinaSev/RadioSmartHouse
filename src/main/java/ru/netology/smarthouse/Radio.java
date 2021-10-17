@@ -2,14 +2,17 @@ package ru.netology.smarthouse;
 
 public class Radio {
 
-//станции
     private int currentStation;
+    private int currentVolume;
 
     public int getCurrentStation () {
         return currentStation;
     }
 
     public void setCurrentStation(int newCurrentStation) {
+        if (newCurrentStation < 0) {
+            newCurrentStation = 0;
+        }
         if (newCurrentStation > 9) {
             newCurrentStation = 9;
         }
@@ -32,10 +35,6 @@ public class Radio {
             currentStation = 9;
         }
     }
-
-
-//звук
-    private int currentVolume;
 
     public int getCurrentVolume() {
         return currentVolume;
