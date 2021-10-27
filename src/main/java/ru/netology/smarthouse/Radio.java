@@ -1,5 +1,13 @@
 package ru.netology.smarthouse;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Radio {
 
     private int currentStation;
@@ -10,19 +18,11 @@ public class Radio {
     private int minVolume = 0;
     private int maxVolume = 100;
 
-    public Radio () {
-    }
-
     public Radio (int numberOfStations) {
         if (numberOfStations < 10) {
             numberOfStations = 10;
         }
         this.numberOfStations = numberOfStations;
-    }
-
-
-    public int getNumberOfStations() {
-        return numberOfStations;
     }
 
     public void setNumberOfStations(int numberOfStations) {
@@ -35,10 +35,6 @@ public class Radio {
     public int getMaxStation() {
         maxStation = numberOfStations - 1;
         return maxStation;
-    }
-
-    public int getCurrentStation() {
-        return currentStation;
     }
 
     public void setCurrentStation(int currentStation) {
@@ -54,10 +50,6 @@ public class Radio {
 
     public void prevStation() {
         currentStation = currentStation > minStation ? (currentStation - 1) : (numberOfStations - 1);
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setCurrentVolume (int currentVolume) {
